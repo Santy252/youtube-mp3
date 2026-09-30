@@ -1,0 +1,13 @@
+{
+  "name": "youtube-a-mp3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pega enlaces de YouTube y descarga el audio en MP3",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

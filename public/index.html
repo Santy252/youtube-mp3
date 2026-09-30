@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube a MP3</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9835;</text></svg>" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="head">
+        <h1>YouTube <span>→</span> MP3</h1>
+        <p>Pega uno o varios enlaces de YouTube y descarga el audio.</p>
+      </header>
+
+      <section class="card">
+        <label for="urls">Enlaces de YouTube</label>
+        <textarea
+          id="urls"
+          rows="5"
+          spellcheck="false"
+          placeholder="https://www.youtube.com/watch?v=..."
+        ></textarea>
+        <div class="row">
+          <button id="paste" type="button" class="btn ghost">Pegar</button>
+          <button id="clear" type="button" class="btn ghost">Limpiar</button>
+          <span class="hint" id="count">0 enlaces</span>
+        </div>
+
+        <div class="options">
+          <label class="field">
+            <span>Calidad</span>
+            <select id="quality">
+              <option value="128K">128 kbps</option>
+              <option value="192K" selected>192 kbps</option>
+              <option value="256K">256 kbps</option>
+              <option value="320K">320 kbps</option>
+              <option value="best">Mejor disponible</option>
+            </select>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="playlist" />
+            <span>Incluir playlists completas</span>
+          </label>
+          <button id="convert" type="button" class="btn primary">Descargar MP3</button>
+        </div>
+      </section>
+
+      <div id="banner" class="banner hidden"></div>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Descargas</h2>
+          <div class="actions">
+            <button id="open-folder" type="button" class="btn ghost small">Abrir carpeta</button>
+            <button id="refresh" type="button" class="btn ghost small">Actualizar</button>
+          </div>
+        </div>
+        <div id="jobs" class="jobs">
+          <p class="empty">Todavia no hay descargas.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Archivos guardados</h2>
+          <span class="hint" id="files-hint"></span>
+        </div>
+        <div id="files" class="files">
+          <p class="empty">Carpeta vacia.</p>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <p id="status">Comprobando herramientas...</p>
+        <p class="legal">
+          Descarga solo contenido que tengas permiso de descargar (Creative Commons, dominio propio,
+          material con permiso del autor). Respeta los derechos de autor y los terminos de YouTube.
+        </p>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
